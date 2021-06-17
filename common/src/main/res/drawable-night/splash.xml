@@ -6,6 +6,11 @@
         </shape>
     </item>
     <item
-        android:drawable="@drawable/new_splash"
+        android:drawable="@drawable/splash_content"
         android:gravity="center" />
+
+    <item android:drawable="@drawable/splash_text"
+        android:gravity="center_horizontal|center_vertical"
+        android:top="60dp"
+        android:left="340dp"/>
 </layer-list>

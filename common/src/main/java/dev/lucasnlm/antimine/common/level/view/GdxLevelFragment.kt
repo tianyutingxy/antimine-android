@@ -201,7 +201,7 @@ open class GdxLevelFragment : AndroidFragmentApplication() {
                                     TooltipCompat.setTooltipText(this, getString(R.string.flag_tile))
                                     gameViewModel.refreshUseOpenOnSwitchControl(false)
                                     preferencesRepository.setSwitchControl(false)
-                                    setImageResource(R.drawable.flag_black)
+                                    setImageResource(R.drawable.flag_white)
                                 } else {
                                     contentDescription = getString(R.string.open)
                                     TooltipCompat.setTooltipText(this, getString(R.string.open))

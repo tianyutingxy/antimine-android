@@ -62,24 +62,25 @@ class LanguageSelectorActivity : ThematicActivity(R.layout.activity_language) {
     class LanguageListFragment : PreferenceFragmentCompat() {
         private val preferenceRepository: IPreferencesRepository by inject()
 
+        //keep en/cn/jp first
         private val languagesMap = mapOf(
-            "Afrikaans" to "af-rZA",
+            /*"Afrikaans" to "af-rZA",
             "العربية" to "ar-rSA",
             "Català" to "ca-rES",
             "Čeština" to "cs-rCZ",
             "Dansk" to "da-rDK",
             "Deutsch" to "de-rDE",
-            "ελληνικά" to "el-rGR",
+            "ελληνικά" to "el-rGR",*/
             "English" to "en-rUS",
-            "Español" to "es-rES",
+            /*"Español" to "es-rES",
             "Suomi" to "fi-rFI",
             "Français" to "fr-rFR",
             "हिन्दी" to "hi-rIN",
             "Magyar" to "hu-rHU",
             "Italiano" to "it-rIT",
-            "תירבע" to "iw-rIL",
+            "תירבע" to "iw-rIL",*/
             "日本語" to "ja-rJP",
-            "한국어" to "ko-rKR",
+            /*"한국어" to "ko-rKR",
             "Nederlands" to "nl-rNL",
             "Bokmål" to "no-rNO",
             "Polski" to "pl-rPL",
@@ -91,12 +92,12 @@ class LanguageSelectorActivity : ThematicActivity(R.layout.activity_language) {
             "ไทย" to "th-rTH",
             "Türkçe" to "tr-rTR",
             "Yкраїньска" to "uk-rUA",
-            "Tiểng Việt" to "vi-rVN",
+            "Tiểng Việt" to "vi-rVN",*/
             "中文" to "zh-rCN",
-            "български" to "bg-rBG",
+            /*"български" to "bg-rBG",
             "Bahasa Indonesia" to "in-rID",
             "Vèneto" to "vec-rIT",
-            "زمانی کوردی" to "ku-rTR",
+            "زمانی کوردی" to "ku-rTR",*/
         )
 
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {

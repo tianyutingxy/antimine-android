@@ -12,6 +12,7 @@ class AboutViewModel(
 ) : IntentViewModel<AboutEvent, AboutState>() {
 
     override fun onEvent(event: AboutEvent) {
+
         if (event == AboutEvent.SourceCode) {
             openSourceCode()
         } else if (event == AboutEvent.Translators) {

@@ -1,6 +1,7 @@
 package dev.lucasnlm.antimine.main
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,10 +13,10 @@ import dev.lucasnlm.antimine.about.AboutActivity
 import dev.lucasnlm.antimine.common.level.repository.IMinefieldRepository
 import dev.lucasnlm.antimine.common.level.repository.ISavesRepository
 import dev.lucasnlm.antimine.control.ControlActivity
-import dev.lucasnlm.antimine.custom.CustomLevelDialogFragment
 import dev.lucasnlm.antimine.core.models.Analytics
 import dev.lucasnlm.antimine.core.models.Difficulty
 import dev.lucasnlm.antimine.core.repository.IDimensionRepository
+import dev.lucasnlm.antimine.custom.CustomLevelDialogFragment
 import dev.lucasnlm.antimine.history.HistoryActivity
 import dev.lucasnlm.antimine.language.LanguageSelectorActivity
 import dev.lucasnlm.antimine.main.viewmodel.MainEvent
@@ -29,11 +30,7 @@ import dev.lucasnlm.antimine.stats.StatsActivity
 import dev.lucasnlm.antimine.themes.ThemeActivity
 import dev.lucasnlm.antimine.ui.ThematicActivity
 import dev.lucasnlm.antimine.ui.ext.toAndroidColor
-import dev.lucasnlm.external.IAnalyticsManager
-import dev.lucasnlm.external.IBillingManager
-import dev.lucasnlm.external.IFeatureFlagManager
-import dev.lucasnlm.external.IInAppUpdateManager
-import dev.lucasnlm.external.IPlayGamesManager
+import dev.lucasnlm.external.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
@@ -41,6 +38,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.net.URLEncoder
 
 class MainActivity : ThematicActivity(R.layout.activity_main) {
     private val viewModel: MainViewModel by viewModel()
@@ -215,9 +213,22 @@ class MainActivity : ThematicActivity(R.layout.activity_main) {
                     text = getString(R.string.donation),
                     startIcon = R.drawable.remove_ads,
                     onAction = {
-                        lifecycleScope.launch {
-                            billingManager.charge(this@MainActivity)
+                        //donate action
+                        var intent = Intent(Intent.ACTION_VIEW);
+                        var uri: Uri? = null
+                        try {
+                            uri = Uri.parse(
+                                "alipays://platformapi/startapp?saId=10000007&qrcode=" + URLEncoder.encode(
+                                    "https://qr.alipay.com/fkx17130y4h2ichcshitj73",
+                                    "UTF-8"
+                                )
+                            )
+                        } catch (e: Exception) {
+                            e.printStackTrace()
                         }
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        intent.data = uri
+                        startActivity(intent);
                     }
                 )
             }

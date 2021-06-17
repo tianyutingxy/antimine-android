@@ -85,7 +85,7 @@
     <string name="general">通用</string>
     <string name="more">更多</string>
     <string name="source_code">源代码</string>
-    <string name="translation">翻译</string>
+    <string name="translation">语言</string>
     <string name="licenses">许可证</string>
     <string name="google_play_games">Google Play 游戏</string>
     <string name="loading">启动中……</string>
@@ -111,7 +111,7 @@
     <string name="switch_control">开关：（切换）标记与打开</string>
     <string name="switch_control_desc">使用按钮在标记和打开之间切换</string>
     <string name="app_description">你需要清除一个隐藏着地雷的矩形面板，不能使任何地雷爆炸。</string>
-    <string name="app_name">扫雷 (踩地雷) - Antimine</string>
+    <string name="app_name">扫个雷</string>
     <string name="do_you_know_how_to_play" comment="It will be shown in a window before show or not the tutorial.&#13;&#10;May also be translated as &quot;Do you want to read the tutorial?&quot;">你想阅读教程吗？</string>
     <string name="close">关闭</string>
     <string name="open_tutorial">打开教程</string>

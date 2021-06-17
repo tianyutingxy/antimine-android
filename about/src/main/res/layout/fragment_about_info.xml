@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="?android:attr/textColorPrimary"
-            tools:text="Version 7.1.0" />
+            tools:text="Version 1.0.0" />
 
         <TextView
             android:id="@+id/instant"
@@ -77,13 +77,15 @@
             android:id="@+id/translation"
             android:layout_marginVertical="4dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
 
         <dev.lucasnlm.antimine.ui.view.CardButtonView
             android:id="@+id/sourceCode"
             android:layout_marginVertical="4dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
 
     </LinearLayout>
 
